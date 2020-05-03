@@ -1,0 +1,31 @@
+ <section *ngIf="pokemon">
+   <div class="pokemonDetails" [ngClass]="{'responsive': pokemonService.isDetailsOpen}">
+     <div class="pokemonImage">
+       <img [src]="pokemon?.image" [alt]="pokemon?.name">
+     </div>
+     <h5>{{pokemon?.name | titlecase }} #{{pokemon?.id}}</h5>
+     <table class="table table-bordered">
+       <thead>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Type</td>
+           <td>{{getType() | titlecase }}</td>
+         </tr>
+         <tr *ngFor="let stat of pokemon.stats">
+           <td>{{stat?.name }}</td>
+           <td>{{stat?.score}}</td>
+         </tr>
+         <tr>
+           <td>Weight</td>
+           <td>{{pokemon?.weight}}</td>
+         </tr>
+         <tr>
+           <td>Total moves</td>
+           <td>{{pokemon?.totalMoves}}</td>
+         </tr>
+       </tbody>
+     </table>
+     <button mat-raised-button color="primary" (click)="closeDetails()">Close</button>
+   </div>
+ </section>

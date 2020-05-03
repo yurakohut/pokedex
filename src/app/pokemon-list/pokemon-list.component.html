@@ -1,0 +1,26 @@
+<div class="container mt-2 pokemons">
+  <section class="pokemons-list">
+    <mat-card class="pokemon-card" *ngFor="let pokemon of pokemons" (click)="getPokemonDetails(pokemon)">
+      <img mat-card-image [src]="pokemon.image" [alt]="pokemon.name">
+      <mat-card-content>
+        <h6 class="text-center">{{pokemon.name | titlecase }}</h6>
+      </mat-card-content>
+      <mat-card-actions>
+        <span class="chip" [ngClass]='type.type.name'
+          *ngFor="let type of pokemon.types">{{type.type.name | titlecase }}</span>
+      </mat-card-actions>
+    </mat-card>
+    <div *ngIf="!isLoading" class="nextBtn-wrapper">
+      <button *ngIf="!noMorePokemons" class="nextBtn" mat-raised-button color="primary" (click)="nextPokemons()">Load
+        more</button>
+    </div>
+    <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+  </section>
+  <section class="pokemon-details" *ngIf="!pokemonService.isModalShown && pokemonService.isDetailsOpen">
+    <app-pokemon-details [pokemon]='onePokemon'></app-pokemon-details>
+  </section>
+</div>
+
+<app-modal>
+  <app-pokemon-details [pokemon]='onePokemon'></app-pokemon-details>
+</app-modal>

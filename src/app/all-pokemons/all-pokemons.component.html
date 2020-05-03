@@ -1,0 +1,28 @@
+<div class='loader' *ngIf="isLoading">
+  <img
+    src="https://firebasestorage.googleapis.com/v0/b/myproject-c5d44.appspot.com/o/loader.gif?alt=media&token=23f3a050-087f-49f8-a1a9-6051559bb362"
+    alt="loader.gif">
+</div>
+
+<div class="container">
+  <mat-form-field *ngIf="!isLoading || isData">
+    <mat-label>Types of pokemon</mat-label>
+    <mat-select [(value)]="chosenType" (selectionChange)='getPokemonData()'>
+      <mat-option *ngFor="let type of types" [value]="type?.name">
+        {{type?.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p *ngIf="isData" class='text-center'>The type '{{chosenType}}' is empty</p>
+
+  <div class="table-container responsive_table" [ngClass]="{'hidden': isLoading || isData}">
+    <table mat-table #table [dataSource]="dataSource" matSort class="mat-elevation-z8 mt-2 table-hover">
+      <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.header }}</th>
+        <td mat-cell *matCellDef="let row">{{ column.cell(row) }} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+section {
+  position: relative;
+
+  .pokemonDetails {
+    border: 1px solid rgba(0, 0, 0, 0.404);
+    padding: 10px;
+
+    .pokemonImage {
+      width: 100%;
+    }
+  }
+}
+
+table {
+  td {
+    padding: 0;
+    width: 127px;
+  }
+}
+
+.responsive {
+  position: fixed;
+}

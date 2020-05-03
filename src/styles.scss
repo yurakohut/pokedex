@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.poison {
+  background-color: rgb(248, 39, 39);
+}
+
+.grass {
+  background-color: rgb(19, 201, 19);
+}
+
+.normal {
+  background-color: #e0e0e0;
+}
+
+.fighting {
+  background-color: #3181eb;
+}
+
+.ground {
+  background-color: #756416;
+}
+
+.rock {
+  background-color: #778197;
+}
+
+.bug {
+  background-color: #ec55f1;
+}
+
+.ghost {
+  background-color: #f52196;
+}
+
+.steel {
+  background-color: #b8ec3c;
+}
+
+.fire {
+  background-color: #d6ba1b;
+}
+
+.water {
+  background-color: #21b9f5;
+}
+
+.electric {
+  background-color: #5d9c50;
+}
+
+.psychic {
+  background-color: #a675e7;
+}
+
+.ice {
+  background-color: wheat;
+}
+
+.dragon {
+  background-color: rgb(168, 146, 105);
+}
+
+.dark {
+  background-color: rgb(12, 124, 128);
+}
+
+.fairy {
+  background-color: rgb(53, 50, 255);
+}
+
+.unknown {
+  background-color: rgb(250, 37, 168);
+}
+
+.shadow {
+  background-color: rgb(110, 88, 102);
+}
+
+.flying {
+  background-color: rgb(65, 247, 156);
+}
